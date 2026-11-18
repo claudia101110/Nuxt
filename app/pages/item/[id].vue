@@ -12,9 +12,17 @@ useHead({ title: () => data.value?.strMeal ?? "Detalle" });
 
     <div v-else>
       <h1>{{ data.strMeal }}</h1>
-      <img :src="data.strMealThumb" :alt="data.strMeal" />
+      <img  class="detalle-img" :src="data.strMealThumb" :alt="data.strMeal" />
       <p>{{ data.strCategory }} · {{ data.strArea }}</p>
       <p>{{ data.strInstructions }}</p>
     </div>
   </div>
 </template>
+
+<style scoped>
+.detalle-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+}
+</style>

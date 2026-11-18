@@ -12,7 +12,7 @@ const favoritesStore = useFavoritesStore();
     <p v-else-if="error">{{ error }}</p>
     <p v-else-if="searched && results.length === 0">No se encontró nada</p>
 
-    <div v-else>
+    <div v-else class="grid">
       <ItemCard v-for="meal in results" :key="meal.idMeal" :item="meal">
         <template #actions>
           <button
@@ -29,3 +29,12 @@ const favoritesStore = useFavoritesStore();
     </div>
   </div>
 </template>
+
+<style scoped>
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+}
+</style>

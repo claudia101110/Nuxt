@@ -4,4 +4,5 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: { public: {apiBase: "https://www.themealdb.com/api/json/v1/1"} },
   modules:["@pinia/nuxt"],
+  css: ["~/assets/css/main.css"],
 })

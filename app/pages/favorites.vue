@@ -11,7 +11,7 @@ const favoritesStore = useFavoritesStore();
       Todavía no tienes favoritos
     </p>
 
-    <div v-else>
+    <div v-else class="grid">
       <ItemCard
         v-for="meal in favoritesStore.favorites"
         :key="meal.idMeal"
@@ -26,3 +26,11 @@ const favoritesStore = useFavoritesStore();
     </div>
   </div>
 </template>
+
+<style scoped>
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+</style>
