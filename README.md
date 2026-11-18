@@ -1,75 +1,39 @@
-# Nuxt Minimal Starter
+# Colleccionista
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Web hecha con Nuxt para buscar recetas, ver su detalle y guardar las favoritas.
 
-## Setup
+## API
 
-Make sure to install dependencies:
+Uso TheMealDB (https://www.themealdb.com/api.php), una API gratuita de recetas.
 
-```bash
-# npm
-npm install
+## Cómo ejecutarlo
 
-# pnpm
-pnpm install
+1. Clonar el repositorio
+2. `cd colleccionista`
+3. `npm install`
+4. `npm run dev`
+5. Abrir http://localhost:3000
 
-# yarn
-yarn install
+## Carpetas
 
-# bun
-bun install
-```
+- `app/pages`: las páginas. Cada archivo es una ruta.
+- `app/layouts`: el menú que sale en todas las páginas.
+- `app/components`: componentes reutilizables, como la tarjeta de receta.
+- `app/services`: el archivo que hace las peticiones a la API.
+- `nuxt.config.ts`: la configuración, con la dirección de la API.
 
-## Development Server
+## CommunicationManager
 
-Start the development server on `http://localhost:3000`:
+Es el archivo donde están todas las peticiones a la API con Axios. Así las páginas no tienen que saber las direcciones, solo piden los datos.
 
-```bash
-# npm
-npm run dev
+## Composables
 
-# pnpm
-pnpm dev
+Pendiente.
 
-# yarn
-yarn dev
+## Pinia
 
-# bun
-bun run dev
-```
+Pendiente.
 
-## Production
+## useAsyncData
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Pendiente.
