@@ -1,6 +1,7 @@
 <script setup>
 useHead({ title: "Buscar" });
 const { query, results, loading, error, searched, search } = useSearch();
+const favoritesStore = useFavoritesStore();
 </script>
 
 <template>
@@ -12,7 +13,19 @@ const { query, results, loading, error, searched, search } = useSearch();
     <p v-else-if="searched && results.length === 0">No se encontró nada</p>
 
     <div v-else>
-      <ItemCard v-for="meal in results" :key="meal.idMeal" :item="meal" />
+      <ItemCard v-for="meal in results" :key="meal.idMeal" :item="meal">
+        <template #actions>
+          <button
+            v-if="favoritesStore.isFavorite(meal.idMeal)"
+            @click="favoritesStore.removeFavorite(meal.idMeal)"
+          >
+            Quitar de favoritos
+          </button>
+          <button v-else @click="favoritesStore.addFavorite(meal)">
+            Añadir a favoritos
+          </button>
+        </template>
+      </ItemCard>
     </div>
   </div>
 </template>
